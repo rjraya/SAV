@@ -1,0 +1,14 @@
+java.lang.IllegalArgumentException: requirement failed: Non-boolean expression: 
+
+content[A](without[A](x, tail)) == content[A](tail) \\ x
+java.lang.IllegalArgumentException: requirement failed: Non-boolean expression: content[A](without[A](x, tail)) == content[A](tail) \\ x
+
+Causado por no tener un tipo conjunto
+
+Theorem(
+
+∀z: A, f: (A, A) => A, l: List[A]. 
+  ((∀x: A, y: A, z: A. (f(x, f(y, z)) == f(f(x, y), z)) && ∀x: A. (f(x, z) == x && f(z, x) == x)) ==> (foldl[A](f, z, l) == foldr[A](f, z, l)))
+
+
+)

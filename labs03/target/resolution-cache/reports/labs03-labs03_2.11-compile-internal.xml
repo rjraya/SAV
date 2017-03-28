@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="labs03"
+		module="labs03_2.11"
+		revision="0.1-SNAPSHOT"
+		conf="compile-internal"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20170325183007"/>
+	<dependencies>
+		<module organisation="welder" name="welder_2.11">
+			<revision name="0.1" status="integration" pubdate="20170325183007" resolver="inter-project" artresolver="inter-project" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="1">
+				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
+				<caller organisation="labs03" name="labs03_2.11" conf="compile-internal, compile, provided, optional" rev="0.1" rev-constraint-default="0.1" rev-constraint-dynamic="0.1" callerrev="0.1-SNAPSHOT"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalactic" name="scalactic_2.11">
+			<revision name="3.0.1" status="release" pubdate="20161110045324" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="10">
+				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2967" time="0" location="/home/usuario/.ivy2/cache/org.scalactic/scalactic_2.11/ivy-3.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalactic/scalactic_2.11/3.0.1/scalactic_2.11-3.0.1.pom"/>
+				<caller organisation="welder" name="welder_2.11" conf="compile" rev="3.0.1" rev-constraint-default="3.0.1" rev-constraint-dynamic="3.0.1" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="scalactic_2.11" type="bundle" ext="jar" status="no" details="" size="740209" time="0" location="/home/usuario/.ivy2/cache/org.scalactic/scalactic_2.11/bundles/scalactic_2.11-3.0.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalactic/scalactic_2.11/3.0.1/scalactic_2.11-3.0.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-reflect">
+			<revision name="2.11.8" status="release" pubdate="20160309051602" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.8/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="11">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2825" time="0" location="/home/usuario/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.8.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.pom"/>
+				<caller organisation="org.scalactic" name="scalactic_2.11" conf="default, compile, runtime, master" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="3.0.1"/>
+				<artifacts>
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="4573750" time="0" location="/home/usuario/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="ch.epfl.lara" name="inox_2.11">
+			<revision name="1.0.2-14-g32935b4" status="integration" pubdate="20170325183007" resolver="inter-project" artresolver="inter-project" homepage="https://github.com/epfl-lara/inox" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="2">
+				<license name="GNU General Public License, Version 3" url="http://www.gnu.org/licenses/gpl-3.0.html"/>
+				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
+				<caller organisation="welder" name="welder_2.11" conf="compile" rev="1.0.2-14-g32935b4" rev-constraint-default="1.0.2-14-g32935b4" rev-constraint-dynamic="1.0.2-14-g32935b4" callerrev="0.1"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="uuverifiers" name="princess_2.11">
+			<revision name="2016-12-26" status="release" pubdate="20161225231916" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="5">
+				<metadata-artifact status="no" details="" size="3186" time="0" location="/home/usuario/.ivy2/cache/uuverifiers/princess_2.11/ivy-2016-12-26.xml" searched="false" origin-is-local="false" origin-location="http://logicrunch.it.uu.se:4096/~wv/maven/uuverifiers/princess_2.11/2016-12-26/princess_2.11-2016-12-26.pom"/>
+				<caller organisation="ch.epfl.lara" name="inox_2.11" conf="compile" rev="2016-12-26" rev-constraint-default="2016-12-26" rev-constraint-dynamic="2016-12-26" callerrev="1.0.2-14-g32935b4"/>
+				<artifacts>
+					<artifact name="princess_2.11" type="jar" ext="jar" status="no" details="" size="7209857" time="0" location="/home/usuario/.ivy2/cache/uuverifiers/princess_2.11/jars/princess_2.11-2016-12-26.jar">
+						<origin-location is-local="false" location="http://logicrunch.it.uu.se:4096/~wv/maven/uuverifiers/princess_2.11/2016-12-26/princess_2.11-2016-12-26.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.sf.squirrel-sql.thirdparty-non-maven" name="java-cup">
+			<revision name="0.11a" status="release" pubdate="20091010143158" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www2.cs.tum.edu/projects/cup/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="9">
+				<license name="CUP Parser Generator Copyright Notice, License, and Disclaimer" url="http://www.smlnj.org//license.html"/>
+				<metadata-artifact status="no" details="" size="2864" time="0" location="/home/usuario/.ivy2/cache/net.sf.squirrel-sql.thirdparty-non-maven/java-cup/ivy-0.11a.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/sf/squirrel-sql/thirdparty-non-maven/java-cup/0.11a/java-cup-0.11a.pom"/>
+				<caller organisation="uuverifiers" name="princess_2.11" conf="default, compile, runtime, master" rev="0.11a" rev-constraint-default="0.11a" rev-constraint-dynamic="0.11a" callerrev="2016-12-26"/>
+				<artifacts>
+					<artifact name="java-cup" type="jar" ext="jar" status="no" details="" size="96121" time="0" location="/home/usuario/.ivy2/cache/net.sf.squirrel-sql.thirdparty-non-maven/java-cup/jars/java-cup-0.11a.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/net/sf/squirrel-sql/thirdparty-non-maven/java-cup/0.11a/java-cup-0.11a.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.modules" name="scala-parser-combinators_2.11">
+			<revision name="1.0.4" status="release" pubdate="20150430160700" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="8">
+				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
+				<metadata-artifact status="no" details="" size="2803" time="0" location="/home/usuario/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/ivy-1.0.4.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.4/scala-parser-combinators_2.11-1.0.4.pom"/>
+				<caller organisation="uuverifiers" name="princess_2.11" conf="default, compile, runtime, master" rev="1.0.4" rev-constraint-default="1.0.4" rev-constraint-dynamic="1.0.4" callerrev="2016-12-26"/>
+				<artifacts>
+					<artifact name="scala-parser-combinators_2.11" type="bundle" ext="jar" status="no" details="" size="423753" time="0" location="/home/usuario/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.4/scala-parser-combinators_2.11-1.0.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="uuverifiers" name="princess-smt-parser_2.11">
+			<revision name="2016-12-26" status="release" pubdate="20161225231915" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="7">
+				<metadata-artifact status="no" details="" size="2568" time="0" location="/home/usuario/.ivy2/cache/uuverifiers/princess-smt-parser_2.11/ivy-2016-12-26.xml" searched="false" origin-is-local="false" origin-location="http://logicrunch.it.uu.se:4096/~wv/maven/uuverifiers/princess-smt-parser_2.11/2016-12-26/princess-smt-parser_2.11-2016-12-26.pom"/>
+				<caller organisation="uuverifiers" name="princess_2.11" conf="default, compile, runtime, master" rev="2016-12-26" rev-constraint-default="2016-12-26" rev-constraint-dynamic="2016-12-26" callerrev="2016-12-26"/>
+				<artifacts>
+					<artifact name="princess-smt-parser_2.11" type="jar" ext="jar" status="no" details="" size="117323" time="0" location="/home/usuario/.ivy2/cache/uuverifiers/princess-smt-parser_2.11/jars/princess-smt-parser_2.11-2016-12-26.jar">
+						<origin-location is-local="false" location="http://logicrunch.it.uu.se:4096/~wv/maven/uuverifiers/princess-smt-parser_2.11/2016-12-26/princess-smt-parser_2.11-2016-12-26.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="uuverifiers" name="princess-parser_2.11">
+			<revision name="2016-12-26" status="release" pubdate="20161225231915" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
+				<metadata-artifact status="no" details="" size="2556" time="0" location="/home/usuario/.ivy2/cache/uuverifiers/princess-parser_2.11/ivy-2016-12-26.xml" searched="false" origin-is-local="false" origin-location="http://logicrunch.it.uu.se:4096/~wv/maven/uuverifiers/princess-parser_2.11/2016-12-26/princess-parser_2.11-2016-12-26.pom"/>
+				<caller organisation="uuverifiers" name="princess_2.11" conf="default, compile, runtime, master" rev="2016-12-26" rev-constraint-default="2016-12-26" rev-constraint-dynamic="2016-12-26" callerrev="2016-12-26"/>
+				<artifacts>
+					<artifact name="princess-parser_2.11" type="jar" ext="jar" status="no" details="" size="111955" time="0" location="/home/usuario/.ivy2/cache/uuverifiers/princess-parser_2.11/jars/princess-parser_2.11-2016-12-26.jar">
+						<origin-location is-local="false" location="http://logicrunch.it.uu.se:4096/~wv/maven/uuverifiers/princess-parser_2.11/2016-12-26/princess-parser_2.11-2016-12-26.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.regblanc" name="scala-smtlib_2.11">
+			<revision name="0.2.1" status="release" pubdate="20161228150404" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/regb/scala-smtlib" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="4">
+				<license name="MIT-style" url="https://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="2775" time="0" location="/home/usuario/.ivy2/cache/com.regblanc/scala-smtlib_2.11/ivy-0.2.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/regblanc/scala-smtlib_2.11/0.2.1/scala-smtlib_2.11-0.2.1.pom"/>
+				<caller organisation="ch.epfl.lara" name="inox_2.11" conf="compile" rev="0.2.1" rev-constraint-default="0.2.1" rev-constraint-dynamic="0.2.1" callerrev="1.0.2-14-g32935b4"/>
+				<artifacts>
+					<artifact name="scala-smtlib_2.11" type="jar" ext="jar" status="no" details="" size="971400" time="0" location="/home/usuario/.ivy2/cache/com.regblanc/scala-smtlib_2.11/jars/scala-smtlib_2.11-0.2.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/regblanc/scala-smtlib_2.11/0.2.1/scala-smtlib_2.11-0.2.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.commons" name="commons-lang3">
+			<revision name="3.4" status="release" pubdate="20150403143100" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-lang/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="3">
+				<metadata-artifact status="no" details="" size="11571" time="0" location="/home/usuario/.ivy2/cache/org.apache.commons/commons-lang3/ivy-3.4.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.pom"/>
+				<caller organisation="ch.epfl.lara" name="inox_2.11" conf="compile" rev="3.4" rev-constraint-default="3.4" rev-constraint-dynamic="3.4" callerrev="1.0.2-14-g32935b4"/>
+				<artifacts>
+					<artifact name="commons-lang3" type="jar" ext="jar" status="no" details="" size="434678" time="0" location="/home/usuario/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.11.8" status="release" pubdate="20160309051604" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.8/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="0">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2653" time="0" location="/home/usuario/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.8.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.pom"/>
+				<caller organisation="labs03" name="labs03_2.11" conf="compile-internal, compile, provided, optional" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="0.1-SNAPSHOT"/>
+				<caller organisation="com.regblanc" name="scala-smtlib_2.11" conf="default, compile, runtime, master" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="0.2.1"/>
+				<caller organisation="uuverifiers" name="princess-smt-parser_2.11" conf="compile, runtime" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="2016-12-26"/>
+				<caller organisation="uuverifiers" name="princess-parser_2.11" conf="compile, runtime" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="2016-12-26"/>
+				<caller organisation="org.scala-lang.modules" name="scala-parser-combinators_2.11" conf="compile, runtime" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="1.0.4"/>
+				<caller organisation="ch.epfl.lara" name="inox_2.11" conf="compile" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="1.0.2-14-g32935b4"/>
+				<caller organisation="uuverifiers" name="princess_2.11" conf="default, compile, runtime, master" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="2016-12-26"/>
+				<caller organisation="org.scalactic" name="scalactic_2.11" conf="default, compile, runtime, master" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="3.0.1"/>
+				<caller organisation="welder" name="welder_2.11" conf="compile" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="0.1"/>
+				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="2.11.8"/>
+				<artifacts>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5744974" time="0" location="/home/usuario/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

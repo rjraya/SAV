@@ -1,0 +1,329 @@
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
+[0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	added: Set(/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala, /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala, /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/Main.scala, /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala, /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala, /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/Main.scala, /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala, /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala, /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/Main.scala, /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala, /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala, /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/Main.scala, /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Recompiling all 4 sources: invalidated sources (4) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 4 Scala sources to /home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/target/scala-2.10/classes...[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.13:component from component compiler for Scala 2.10.6[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.13:component from component compiler for Scala 2.10.6[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 9075d06, interfacing (CompilerInterface) with Scala compiler version 2.10.6[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes:/home/usuario/.sbt/boot/scala-2.10.6/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/target/scala-2.10/classes[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:1: not found: object inox[0m
+[0m[[31merror[0m] [0mimport inox._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:2: not found: object inox[0m
+[0m[[31merror[0m] [0mimport inox.trees.{forall => _, _}[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:3: not found: object inox[0m
+[0m[[31merror[0m] [0mimport inox.trees.dsl._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:5: not found: object welder[0m
+[0m[[31merror[0m] [0mimport welder._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:11: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val foldID = FreshIdentifier("fold")[0m
+[0m[[31merror[0m] [0m               ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:12: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val contentID = FreshIdentifier("content")[0m
+[0m[[31merror[0m] [0m                  ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:13: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val withoutID = FreshIdentifier("without")[0m
+[0m[[31merror[0m] [0m                  ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:15: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val list = FreshIdentifier("List")[0m
+[0m[[31merror[0m] [0m             ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:16: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val cons = FreshIdentifier("Cons")[0m
+[0m[[31merror[0m] [0m             ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:17: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val nil = FreshIdentifier("Nil")[0m
+[0m[[31merror[0m] [0m            ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:19: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val head = FreshIdentifier("head")[0m
+[0m[[31merror[0m] [0m             ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:20: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val tail = FreshIdentifier("tail")[0m
+[0m[[31merror[0m] [0m             ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:22: not found: value mkSort[0m
+[0m[[31merror[0m] [0m  val listADT = mkSort(list)("A")(Seq(cons, nil))[0m
+[0m[[31merror[0m] [0m                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:23: not found: value mkConstructor[0m
+[0m[[31merror[0m] [0m  val consADT = mkConstructor(cons)("A")(Some(list)) { case Seq(aT) =>[0m
+[0m[[31merror[0m] [0m                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:26: not found: value mkConstructor[0m
+[0m[[31merror[0m] [0m  val nilADT = mkConstructor(nil)("A")(Some(list))(_ => Nil)[0m
+[0m[[31merror[0m] [0m               ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:29: not found: value mkFunDef[0m
+[0m[[31merror[0m] [0m  val foldFunction = mkFunDef(foldID)("A") { case Seq(aT) => ([0m
+[0m[[31merror[0m] [0m                     ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:47: not found: value mkFunDef[0m
+[0m[[31merror[0m] [0m  val contentFunction = mkFunDef(contentID)("A") { case Seq(aT) => ([0m
+[0m[[31merror[0m] [0m                        ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:65: not found: type FunDef[0m
+[0m[[31merror[0m] [0m  val withoutFunction: FunDef = mkFunDef(withoutID)("A"){ case Seq(aT) => [0m
+[0m[[31merror[0m] [0m                       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:65: not found: value mkFunDef[0m
+[0m[[31merror[0m] [0m  val withoutFunction: FunDef = mkFunDef(withoutID)("A"){ case Seq(aT) => [0m
+[0m[[31merror[0m] [0m                                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:95: not found: value NoSymbols[0m
+[0m[[31merror[0m] [0m  val symbols = NoSymbols[0m
+[0m[[31merror[0m] [0m                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:99: not found: value InoxProgram[0m
+[0m[[31merror[0m] [0m  val program = InoxProgram(Context.empty, symbols)[0m
+[0m[[31merror[0m] [0m                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:101: not found: value theoryOf[0m
+[0m[[31merror[0m] [0m  val theory = theoryOf(program)[0m
+[0m[[31merror[0m] [0m               ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:104: not found: value TypeParameter[0m
+[0m[[31merror[0m] [0m  val A = TypeParameter.fresh("A")[0m
+[0m[[31merror[0m] [0m          ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:106: not found: value E[0m
+[0m[[31merror[0m] [0m  def fold(f: Expr, z: Expr, l: Expr) = E(foldID)(A)(f, z, l)[0m
+[0m[[31merror[0m] [0m                                        ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:106: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def fold(f: Expr, z: Expr, l: Expr) = E(foldID)(A)(f, z, l)[0m
+[0m[[31merror[0m] [0m              ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:106: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def fold(f: Expr, z: Expr, l: Expr) = E(foldID)(A)(f, z, l)[0m
+[0m[[31merror[0m] [0m                       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:106: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def fold(f: Expr, z: Expr, l: Expr) = E(foldID)(A)(f, z, l)[0m
+[0m[[31merror[0m] [0m                                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:107: not found: value E[0m
+[0m[[31merror[0m] [0m  def content(e: Expr) = E(contentID)(A)(e)[0m
+[0m[[31merror[0m] [0m                         ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:107: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def content(e: Expr) = E(contentID)(A)(e)[0m
+[0m[[31merror[0m] [0m                 ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:108: not found: value E[0m
+[0m[[31merror[0m] [0m  def without(x: Expr, xs: Expr) = E(withoutID)(A)(x,xs)[0m
+[0m[[31merror[0m] [0m                                   ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:108: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def without(x: Expr, xs: Expr) = E(withoutID)(A)(x,xs)[0m
+[0m[[31merror[0m] [0m                 ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:108: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def without(x: Expr, xs: Expr) = E(withoutID)(A)(x,xs)[0m
+[0m[[31merror[0m] [0m                           ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:110: not found: value T[0m
+[0m[[31merror[0m] [0m  val ListA = T(list)(A)[0m
+[0m[[31merror[0m] [0m              ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:111: not found: value T[0m
+[0m[[31merror[0m] [0m  val ConsA = T(cons)(A)[0m
+[0m[[31merror[0m] [0m              ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:112: not found: value T[0m
+[0m[[31merror[0m] [0m  val NilA = T(nil)(A)[0m
+[0m[[31merror[0m] [0m             ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:115: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isAssociative(f: Expr): Expr = forall("x" :: A, "y" :: A, "z" :: A)((x, y, z) => f(x, f(y, z)) === f(f(x, y), z))[0m
+[0m[[31merror[0m] [0m                              ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:115: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isAssociative(f: Expr): Expr = forall("x" :: A, "y" :: A, "z" :: A)((x, y, z) => f(x, f(y, z)) === f(f(x, y), z))[0m
+[0m[[31merror[0m] [0m                       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:115: not found: value forall[0m
+[0m[[31merror[0m] [0m  def isAssociative(f: Expr): Expr = forall("x" :: A, "y" :: A, "z" :: A)((x, y, z) => f(x, f(y, z)) === f(f(x, y), z))[0m
+[0m[[31merror[0m] [0m                                     ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:118: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isCommutative(f: Expr): Expr = forall("x" :: A, "y" :: A)((x, y) => f(x, y) === f(y, x))[0m
+[0m[[31merror[0m] [0m                              ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:118: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isCommutative(f: Expr): Expr = forall("x" :: A, "y" :: A)((x, y) => f(x, y) === f(y, x))[0m
+[0m[[31merror[0m] [0m                       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:118: not found: value forall[0m
+[0m[[31merror[0m] [0m  def isCommutative(f: Expr): Expr = forall("x" :: A, "y" :: A)((x, y) => f(x, y) === f(y, x))[0m
+[0m[[31merror[0m] [0m                                     ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:121: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isIdempotent(f: Expr): Expr = forall("x" :: A, "y" :: A)((x, y) => f(x,y) === f(f(x, y),x))[0m
+[0m[[31merror[0m] [0m                             ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:121: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isIdempotent(f: Expr): Expr = forall("x" :: A, "y" :: A)((x, y) => f(x,y) === f(f(x, y),x))[0m
+[0m[[31merror[0m] [0m                      ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:121: not found: value forall[0m
+[0m[[31merror[0m] [0m  def isIdempotent(f: Expr): Expr = forall("x" :: A, "y" :: A)((x, y) => f(x,y) === f(f(x, y),x))[0m
+[0m[[31merror[0m] [0m                                    ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:134: not found: type Theorem[0m
+[0m[[31merror[0m] [0m  lazy val theorem: Theorem = [0m
+[0m[[31merror[0m] [0m                    ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldContent.scala:135: not found: value forallI[0m
+[0m[[31merror[0m] [0m    forallI("f" :: ((A, A) =>: A), "z" :: A, "l1" :: ListA, "l2" :: ListA){ (f,z,l1,l2) => [0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:2: not found: object inox[0m
+[0m[[31merror[0m] [0mimport inox._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:3: not found: object inox[0m
+[0m[[31merror[0m] [0mimport inox.trees.{forall => _, _}[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:4: not found: object inox[0m
+[0m[[31merror[0m] [0mimport inox.trees.dsl._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:6: not found: object welder[0m
+[0m[[31merror[0m] [0mimport welder._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:12: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val foldlID = FreshIdentifier("foldl")[0m
+[0m[[31merror[0m] [0m                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:13: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val foldrID = FreshIdentifier("foldr")[0m
+[0m[[31merror[0m] [0m                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:15: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val list = FreshIdentifier("List")[0m
+[0m[[31merror[0m] [0m             ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:16: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val cons = FreshIdentifier("Cons")[0m
+[0m[[31merror[0m] [0m             ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:17: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val nil = FreshIdentifier("Nil")[0m
+[0m[[31merror[0m] [0m            ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:19: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val head = FreshIdentifier("head")[0m
+[0m[[31merror[0m] [0m             ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:20: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val tail = FreshIdentifier("tail")[0m
+[0m[[31merror[0m] [0m             ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:30: not found: value mkSort[0m
+[0m[[31merror[0m] [0m  val listADT = mkSort(list)("A")(Seq(cons, nil))[0m
+[0m[[31merror[0m] [0m                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:31: not found: value mkConstructor[0m
+[0m[[31merror[0m] [0m  val consADT = mkConstructor(cons)("A")(Some(list)) { case Seq(aT) =>[0m
+[0m[[31merror[0m] [0m                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:34: not found: value mkConstructor[0m
+[0m[[31merror[0m] [0m  val nilADT = mkConstructor(nil)("A")(Some(list))(_ => Nil)[0m
+[0m[[31merror[0m] [0m               ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:45: not found: type FunDef[0m
+[0m[[31merror[0m] [0m  val foldlFunction: FunDef = mkFunDef(foldlID)("A") { case Seq(aT) => ([0m
+[0m[[31merror[0m] [0m                     ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:45: not found: value mkFunDef[0m
+[0m[[31merror[0m] [0m  val foldlFunction: FunDef = mkFunDef(foldlID)("A") { case Seq(aT) => ([0m
+[0m[[31merror[0m] [0m                              ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:71: not found: type FunDef[0m
+[0m[[31merror[0m] [0m  val foldrFunction: FunDef = mkFunDef(foldrID)("A") { case Seq(aT) => ([0m
+[0m[[31merror[0m] [0m                     ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:71: not found: value mkFunDef[0m
+[0m[[31merror[0m] [0m  val foldrFunction: FunDef = mkFunDef(foldrID)("A") { case Seq(aT) => ([0m
+[0m[[31merror[0m] [0m                              ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:81: not found: value NoSymbols[0m
+[0m[[31merror[0m] [0m  val symbols = NoSymbols[0m
+[0m[[31merror[0m] [0m                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:85: not found: value InoxProgram[0m
+[0m[[31merror[0m] [0m  val program = InoxProgram(Context.empty, symbols)[0m
+[0m[[31merror[0m] [0m                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:87: not found: value theoryOf[0m
+[0m[[31merror[0m] [0m  val theory = theoryOf(program)[0m
+[0m[[31merror[0m] [0m               ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:92: not found: value TypeParameter[0m
+[0m[[31merror[0m] [0m  val A = TypeParameter.fresh("A")[0m
+[0m[[31merror[0m] [0m          ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:94: not found: value E[0m
+[0m[[31merror[0m] [0m  def foldl(f: Expr, z: Expr, l: Expr) = E(foldlID)(A)(f, z, l)[0m
+[0m[[31merror[0m] [0m                                         ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:94: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def foldl(f: Expr, z: Expr, l: Expr) = E(foldlID)(A)(f, z, l)[0m
+[0m[[31merror[0m] [0m               ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:94: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def foldl(f: Expr, z: Expr, l: Expr) = E(foldlID)(A)(f, z, l)[0m
+[0m[[31merror[0m] [0m                        ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:94: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def foldl(f: Expr, z: Expr, l: Expr) = E(foldlID)(A)(f, z, l)[0m
+[0m[[31merror[0m] [0m                                 ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:95: not found: value E[0m
+[0m[[31merror[0m] [0m  def foldr(f: Expr, z: Expr, l: Expr) = E(foldrID)(A)(f, z, l)[0m
+[0m[[31merror[0m] [0m                                         ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:95: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def foldr(f: Expr, z: Expr, l: Expr) = E(foldrID)(A)(f, z, l)[0m
+[0m[[31merror[0m] [0m               ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:95: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def foldr(f: Expr, z: Expr, l: Expr) = E(foldrID)(A)(f, z, l)[0m
+[0m[[31merror[0m] [0m                        ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:95: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def foldr(f: Expr, z: Expr, l: Expr) = E(foldrID)(A)(f, z, l)[0m
+[0m[[31merror[0m] [0m                                 ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:97: not found: value T[0m
+[0m[[31merror[0m] [0m  val ListA = T(list)(A)[0m
+[0m[[31merror[0m] [0m              ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:98: not found: value T[0m
+[0m[[31merror[0m] [0m  val ConsA = T(cons)(A)[0m
+[0m[[31merror[0m] [0m              ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:99: not found: value T[0m
+[0m[[31merror[0m] [0m  val NilA = T(nil)(A)[0m
+[0m[[31merror[0m] [0m             ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:103: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isAssociative(f: Expr): Expr = forall("x" :: A, "y" :: A, "z" :: A)((x, y, z) => f(x, f(y, z)) === f(f(x, y), z))[0m
+[0m[[31merror[0m] [0m                              ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:103: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isAssociative(f: Expr): Expr = forall("x" :: A, "y" :: A, "z" :: A)((x, y, z) => f(x, f(y, z)) === f(f(x, y), z))[0m
+[0m[[31merror[0m] [0m                       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:103: not found: value forall[0m
+[0m[[31merror[0m] [0m  def isAssociative(f: Expr): Expr = forall("x" :: A, "y" :: A, "z" :: A)((x, y, z) => f(x, f(y, z)) === f(f(x, y), z))[0m
+[0m[[31merror[0m] [0m                                     ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:106: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isUnit(z: Expr, f: Expr): Expr = forall("x" :: A)(x => f(x, z) === x && f(z, x) === x)[0m
+[0m[[31merror[0m] [0m                                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:106: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isUnit(z: Expr, f: Expr): Expr = forall("x" :: A)(x => f(x, z) === x && f(z, x) === x)[0m
+[0m[[31merror[0m] [0m                ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:106: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isUnit(z: Expr, f: Expr): Expr = forall("x" :: A)(x => f(x, z) === x && f(z, x) === x)[0m
+[0m[[31merror[0m] [0m                         ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:106: not found: value forall[0m
+[0m[[31merror[0m] [0m  def isUnit(z: Expr, f: Expr): Expr = forall("x" :: A)(x => f(x, z) === x && f(z, x) === x)[0m
+[0m[[31merror[0m] [0m                                       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:109: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isMonoid(z: Expr, f: Expr): Expr = isAssociative(f) && isUnit(z, f)[0m
+[0m[[31merror[0m] [0m                                  ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:109: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isMonoid(z: Expr, f: Expr): Expr = isAssociative(f) && isUnit(z, f)[0m
+[0m[[31merror[0m] [0m                  ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:109: not found: type Expr[0m
+[0m[[31merror[0m] [0m  def isMonoid(z: Expr, f: Expr): Expr = isAssociative(f) && isUnit(z, f)[0m
+[0m[[31merror[0m] [0m                           ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:115: not found: type Theorem[0m
+[0m[[31merror[0m] [0m  lazy val theorem: Theorem =[0m
+[0m[[31merror[0m] [0m                    ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/FoldLeftRight.scala:116: not found: value forallI[0m
+[0m[[31merror[0m] [0m    forallI("z" :: A, "f" :: ((A, A) =>: A)) { (z, f) =>[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala:2: not found: object inox[0m
+[0m[[31merror[0m] [0mimport inox._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala:3: not found: object inox[0m
+[0m[[31merror[0m] [0mimport inox.trees.{forall => _, _}[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala:4: not found: object inox[0m
+[0m[[31merror[0m] [0mimport inox.trees.dsl._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala:5: not found: object welder[0m
+[0m[[31merror[0m] [0mimport welder._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala:19: not found: type Identifier[0m
+[0m[[31merror[0m] [0m  val list: Identifier = FreshIdentifier("List")[0m
+[0m[[31merror[0m] [0m            ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala:19: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val list: Identifier = FreshIdentifier("List")[0m
+[0m[[31merror[0m] [0m                         ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala:20: not found: type Identifier[0m
+[0m[[31merror[0m] [0m  val cons: Identifier = FreshIdentifier("Cons")[0m
+[0m[[31merror[0m] [0m            ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala:20: not found: value FreshIdentifier[0m
+[0m[[31merror[0m] [0m  val cons: Identifier = FreshIdentifier("Cons")[0m
+[0m[[31merror[0m] [0m                         ^[0m
+[0m[[31merror[0m] [0m/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/src/main/scala/ListsAndTrees.scala:21: not found: type Identifier[0m
+[0m[[31merror[0m] [0m  val nil: Identifier = FreshIdentifier("Nil")[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m156 errors found[0m
+[0m[[0mdebug[0m] [0mCompilation failed (CompilerInterface)[0m
+[0m[[31merror[0m] [0m(compile:[31mcompileIncremental[0m) Compilation failed[0m

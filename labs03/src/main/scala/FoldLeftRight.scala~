@@ -1,0 +1,162 @@
+
+import inox._
+import inox.trees.{forall => _, _}
+import inox.trees.dsl._
+
+import welder._
+
+object FoldLeftRight {
+
+  /* We start by declaring some identifiers that will be used to
+   * create the functions and datatypes we are interested in. */
+  val foldlID = FreshIdentifier("foldl")
+  val foldrID = FreshIdentifier("foldr")
+
+  val list = FreshIdentifier("List")
+  val cons = FreshIdentifier("Cons")
+  val nil = FreshIdentifier("Nil")
+
+  val head = FreshIdentifier("head")
+  val tail = FreshIdentifier("tail")
+
+  /* We define the `List` datatype using the identifiers defined above.
+   * In Stainless, this corresponds to the following definition:
+   * ```
+   * abstract class List[A]
+   * case class Cons[A](head: A, tail: List[A]) extends List[A]
+   * case class Nil[A]() extends List[A]
+   * ```
+   */
+  val listADT = mkSort(list)("A")(Seq(cons, nil))
+  val consADT = mkConstructor(cons)("A")(Some(list)) { case Seq(aT) =>
+    Seq(ValDef(head, aT), ValDef(tail, T(list)(aT)))
+  }
+  val nilADT = mkConstructor(nil)("A")(Some(list))(_ => Nil)
+
+  /* We define the foldl (fold left) function using the `foldlID` identifier defined above.
+   * In Stainless, this corresponds to the following function definition:
+   * ```
+   * def foldl[A](f: (A,A) => A, z: A, l: List[A]): A = l match {
+   *   case Cons(x, xs) => foldl(f, f(z, x), xs)
+   *   case Nil() => z
+   * }
+   * ```
+   * */
+  val foldlFunction: FunDef = mkFunDef(foldlID)("A") { case Seq(aT) => (
+    Seq("f" :: ((aT, aT) =>: aT), "z" :: aT, "l" :: T(list)(aT)), aT, { case Seq(f, z, l) =>
+      if_ (l.isInstOf(T(cons)(aT))) {
+        E(foldlID)(aT)(f, f(z, l.asInstOf(T(cons)(aT)).getField(head)), l.asInstOf(T(cons)(aT)).getField(tail))
+      } else_ {
+        z
+      }
+    })
+  }
+
+  /* TODO: define the foldr (fold right) function on List.
+   * See the above `foldl` function definition to get an idea of how this can be done.
+   *
+   * Once you have created a symbol table (see below), you can call
+   * `foldrFunction.fullBody.getType` to check that your definition makes (at least
+   * some) sense. If the method returns `Untyped`, you can get some idea about what is
+   * going wrong by considering the output of the following line:
+   * ```
+   * println(symbols.explainTyping(foldrFunction.fullBody.getType)(PrinterOptions(symbols = Some(symbols))))
+   * ```
+   */
+  val foldrFunction: FunDef = ???
+
+  val symbols = NoSymbols
+    .withADTs(Seq(listADT, consADT, nilADT))
+    .withFunctions(Seq(foldlFunction, foldrFunction))
+
+  val program = InoxProgram(Context.empty, symbols)
+
+  val theory = theoryOf(program)
+  import theory._
+
+
+  /* Let us define a few helper values/functions to make our formulas clearer */
+  val A = TypeParameter.fresh("A")
+
+  def foldl(f: Expr, z: Expr, l: Expr) = E(foldlID)(A)(f, z, l)
+  def foldr(f: Expr, z: Expr, l: Expr) = E(foldrID)(A)(f, z, l)
+
+  val ListA = T(list)(A)
+  val ConsA = T(cons)(A)
+  val NilA = T(nil)(A)
+
+
+  /* This method generates a formula stating that the parameter function `f` is associative. */
+  def isAssociative(f: Expr): Expr = forall("x" :: A, "y" :: A, "z" :: A)((x, y, z) => f(x, f(y, z)) === f(f(x, y), z))
+
+  /* This method generates a formula stating that `z` is a unit of the function `f`. */
+  def isUnit(z: Expr, f: Expr): Expr = forall("x" :: A)(x => f(x, z) === x && f(z, x) === x)
+
+  /* TODO: complete the `isMonoid` function such that it generates a formula ensuring
+   * that `(z,f)` is a monoid. Recall that a monoid is defined by an associative binary
+   * operator `f` and an element `z` that is a unit of `f`. */
+  def isMonoid(z: Expr, f: Expr): Expr = isAssociative(f) && isUnit(z,f)
+
+  /* TODO: state and prove the following theorem:
+   *
+   *    ∀z: A,f: (A,A) => A,l: List[A]. isMonoid(z, f) ==> (foldl(f, z, l) == foldr(f, z, l))
+   *
+   * Note that you are allowed to change the ordering and nesting of quantifiers.
+   */
+  lazy val theorem: Theorem = forall("z"::R,"f"::((A,A) =>: A)) { (z,f) =>
+    implI(isMonoid(z,f)){isMonoid =>
+     val Seq(isAssoc,isUnit) = and(isMonoid) : Seq[Theorem]
+     val lemma = structuralInduction((l:Expr) => forall("x"::A)(x => foldr(f,x,l) === f(x,foldr(f,z,l))),"l"::ListA){
+       case(ihs,goal) => 
+        ihs.expression match{
+          case C('cons',h,t) => forallI("x"::A){x => 
+           foldl(f,x,ihs.expression)    ==|
+                                  trivial |
+           foldl(f,x,ConsA(h,t)))       ==|
+                                  trivial |
+           foldl(f,f(x,h),t)            ==|
+           forallE(ihs.hypothesis(t))(f(x,h)) |
+           f(f(x,h),foldl(f,z,t))       ==|
+           forallE(isAssoc)(x,h,foldl(f,z,t)) |
+
+
+           f(x,foldl(f,h,t))            ==|
+                       forallE(isUnit)(h) |
+           f(x,foldl(f,f(z,h),t))       ==|
+                                  trivial |
+           f(x,foldl(f,z,ihs.expression))
+
+          }
+        }
+     }
+     prove(forall("x"::A,"l"::ListA)((x,l) => foldr(f,x,l) === f(x,foldr(f,z,l))))
+     def lhs(l:Expr) = foldl(f,z,l)
+     def rhs(l:Expr) = foldr(f,z,l)
+     structuralInduction((l:Expr) => lhs(l) === rhs(l), "1"::ListA){
+      case(ihs,goal) => 
+        ihs.expression match{
+          case C('cons',h,t) => 
+            lhs(ihs.expression)         ==|
+                                  trivial |
+            foldl(f,z,ihs.expression)   ==|
+                                  trivial |
+            foldl(f,f(z,h),t)           ==|
+                       forallE(isUnit)(h) |
+            foldl(f,h,t)                ==|  
+                        ihs.hypothesis(t) |
+            foldr(f,h,t)                ==|
+                                      ??? |           
+            f(h,foldr(f,z,t))           ==|
+                                  trivial |            
+            foldr(f,h,t)                ==|
+                                  trivial |
+            rhs(ihs.expression)  
+  
+            prove(forall(isMonoid(z,f) ==> (foldl(f,z,ihs.expression) === foldr(f,z,ihs.expression))))
+          case C('nil') => trivial
+        }
+    }
+    
+  }
+  
+}

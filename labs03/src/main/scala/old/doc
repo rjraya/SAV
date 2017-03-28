@@ -1,0 +1,64 @@
+forallI
+
+See forallE. I believe this is the counterpart.
+------------------------------------------------------------
+implyI
+
+Implication introduction. It allows to, within some limited scope, accept some expression as true. 
+See scoped thoerems on the tutorial for more details.
+------------------------------------------------------------
+def andE(conjunction: Theorem): Attempt[Seq[Theorem]]
+
+Given a `Theorem` in the form of a conjunction, returns a theorem for each conjunct.
+Parameter conjunction is a proven conjunction.
+Returns a sequence of proven conjuncts.
+------------------------------------------------------------
+def structuralInduction(property: Expr, valDef: ValDef)
+(cases: (StructuralInductionHypotheses, Goal) => Attempt[Witness]): Attempt[Theorem]
+
+Proves that a property holds on all values of an ADT by structural induction.
+Parameter property is the property to be proven. Should be forall-quantified.
+Parameter valDef is the variable definition for which the property should hold. Its type being an ADT.
+Parameter cases gives a Proof for each of the cases. 
+Returns a forall-quantified theorem, stating that the property holds for all expressions of the given type.
+------------------------------------------------------------ 
+extractor C
+
+feature from Inox "Added extractor C, to match over expressions of type ADT."
+------------------------------------------------------------
+def forallE(first: Expr, rest: Expr*): Attempt[Theorem]
+
+Universal quantification elimination. It eliminates the quantification from a function and replace with 
+the actual values passed as parameters. For instance we may define:
+
+    def isAssociative(f: Expr): Expr = 
+      forall("x" :: A, "y" :: A, "z" :: A)
+        ((x, y, z) => f(x, f(y, z)) === f(f(x, y), z))
+
+and then we could call forallE(isAssoc)(x, h, foldl(f, z, t)) for instantiating the parameters.
+------------------------------------------------------------
+class ValDef(v: Variable) extends Definition with VariableSymbol 
+
+A ValDef declares a formal parameter (with symbol [[id]]) to be of a certain type.
+------------------------------------------------------------
+E()
+
+Constructs that give access to the inox dsl
+------------------------------------------------------------
+def T(tp1: Type, tp2: Type, tps: Type*) = TupleType(tp1 :: tp2 :: tps.toList)
+def T(id: Identifier) = new IdToADTType(id)
+def T(str: String) = TypeParameter.fresh(str)
+
+T()
+------------------------------------------------------------
+Creates a [[Expressions.Let Let]]. A [[Definitions.ValDef ValDef]] and a
+context is given; the identifier of the ValDef is passed to the context.
+
+@param vd The ValDef which will be bound in the body (see [[TypeToValDef.::]])
+@param v The value bound to the let-variable
+@param body The context which will be filled with the let-variable
+
+def let(vd: ValDef, v: Expr)(body: Variable => Expr) 
+
+
+let ("cAs" :: T(cons)(tpe), as.asInstOf(T(cons)(tpe)))

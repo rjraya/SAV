@@ -1,0 +1,22 @@
+1. There is no pattern matching? Can I use match in function definitions?
+See for the case of the definition of without. Will this affect the proof?
+case C(`cons`, x, ys)
+case C(`cons`,y,ys)
+
+So for this case I need actually this structure:
+case C(`cons`, y, ys) =>
+  val eqLemma = implI(x === y)
+  val neqLemma = impliI(x !== y)
+  andI(eqLemma, neqLemma)
+case C(`nil`) => trivial
+
+2. How to express recursive calls? E(functionID)(parameters) as usual
+  
+3. How can you construct a list? T(cons)(tpe)(cAs.getField(head), E(concatenate)(tpe)(cAs.getField(tail), bs))
+
+4. How do you get on with classes and objects?
+
+5. Ways to debug in the proof? I can actually do println() of theorems etc
+
+6. How to prove implications and not equivalences? Is it necesary to assume the first part?
+

@@ -1,0 +1,43 @@
+@online{proofs-sets,
+  author = {Romain Edelmann},
+  title = {Proving properties of sets in Inox/Welder},
+  year = 2017,
+  url = {http://stackoverflow.com/questions/43011252/proving-properties-of-sets-in-inox-welder},
+  urldate = {2017-03-27}
+}
+
+@online{strong-induction,
+  author = {Nicolas Voirol},
+  title = {Is there a notion of strong induction in Welder?},
+  year = 2017,
+  url = {http://stackoverflow.com/questions/43020382/is-there-a-notion-of-strong-induction-in-welder},
+  urldate = {2017-03-27}
+}
+
+@article{matching,
+	author    = "Emir B. et alii.",
+	title     = "Matching objects with patterns",
+	journal   = "European Conference on Object-Oriented Programming",
+	year      = "2007",
+	month     = "july",
+	pages     = "273--298"
+}
+
+@online{z3-error,
+  author = {Several authors},
+  title = {Z3 prover},
+  year = 2017,
+  url = {https://github.com/Z3Prover/z3/blob/master/src/ast/array_decl_plugin.cpp},
+  urldate = {2017-03-27}
+}
+
+@online{formally,
+  author = {D.W.},
+  title = {Formally proving properties of fold function},
+  year = 2017,
+  url = {http://cs.stackexchange.com/questions/71916/formally-proving-properties-of-fold-function},
+  urldate = {2017-03-27}
+}
+
+
+

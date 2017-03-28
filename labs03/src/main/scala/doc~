@@ -1,0 +1,13 @@
+forallI
+
+implyI
+
+Implication introduction. It allows to, within some limited scope, accept some expression as true. 
+See scoped thoerems on the tutorial for more details.
+
+andE(conjunction: Theorem): Attempt[Seq[Theorem]]
+
+Given a `Theorem` in the form of a conjunction, returns a theorem for each conjunct.
+Parameter conjunction is a proven conjunction.
+The return value is a sequence of proven conjuncts.
+

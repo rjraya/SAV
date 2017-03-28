@@ -1,0 +1,314 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plantilla básica de Latex en Español.
+%
+% Autor: Andrés Herrera Poyatos (https://github.com/andreshp)
+%
+% Es una plantilla básica para redactar documentos. Utiliza el paquete fancyhdr para darle un
+% estilo moderno pero serio.
+%
+% La plantilla se encuentra adaptada al español.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------------------------------------------------
+%	INCLUSIÓN DE PAQUETES BÁSICOS
+%-----------------------------------------------------------------------------------------------------
+\documentclass{article}
+%-----------------------------------------------------------------------------------------------------
+%	SELECCIÓN DEL LENGUAJE
+%-----------------------------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}                                    % Permite los acentos.
+%-----------------------------------------------------------------------------------------------------
+%	SELECCIÓN DE LA FUENTE
+%-----------------------------------------------------------------------------------------------------
+% Fuente utilizada.
+\usepackage{courier}                    % Fuente Courier.
+\usepackage{microtype}                  % Mejora la letra final de cara al lector.
+%-----------------------------------------------------------------------------------------------------
+%	ALGORITMOS
+%-----------------------------------------------------------------------------------------------------
+\usepackage{algpseudocode}
+\usepackage{algorithmicx}
+\usepackage{algorithm}
+
+% code listing settings
+\usepackage{listings}
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+}
+%-----------------------------------------------------------------------------------------------------
+%	IMÁGENES
+%-----------------------------------------------------------------------------------------------------
+\usepackage{float}
+\usepackage{placeins}
+%-----------------------------------------------------------------------------------------------------
+%	ESTILO DE PÁGINA
+%-----------------------------------------------------------------------------------------------------
+% Paquetes para el diseño de página:
+\usepackage{fancyhdr}               % Utilizado para hacer títulos propios.
+\usepackage{lastpage}               % Referencia a la última página. Utilizado para el pie de página.
+\usepackage{extramarks}             % Marcas extras. Utilizado en pie de página y cabecera.
+\usepackage[parfill]{parskip}       % Crea una nueva línea entre párrafos.
+\usepackage{geometry}               % Asigna la "geometría" de las páginas.
+% Se elige el estilo fancy y márgenes de 3 centímetros.
+\pagestyle{fancy}
+\geometry{left=3cm,right=3cm,top=3cm,bottom=3cm,headheight=1cm,headsep=0.5cm} % Márgenes y cabecera.
+% Se limpia la cabecera y el pie de página para poder rehacerlos luego.
+\fancyhf{}
+% Espacios en el documento:
+\linespread{1.1}                        % Espacio entre líneas.
+\setlength\parindent{0pt}               % Selecciona la indentación para cada inicio de párrafo.
+% Cabecera del documento. Se ajusta la línea de la cabecera.
+\renewcommand\headrule{
+	\begin{minipage}{1\textwidth}
+	    \hrule width \hsize
+	\end{minipage}
+}
+% Texto de la cabecera:
+\lhead{\subject}                          % Parte izquierda.
+\chead{}                                    % Centro.
+\rhead{\doctitle \ - \docsubtitle}              % Parte derecha.
+% Pie de página del documento. Se ajusta la línea del pie de página.
+\renewcommand\footrule{
+\begin{minipage}{1\textwidth}
+    \hrule width \hsize
+\end{minipage}\par
+}
+\lfoot{Lab 2: Using the Stainless verification system}                    
+\cfoot{}                                                
+\rfoot{\thepage} 
+
+%----------------------------------------------------------------------------------------
+%   MATEMÁTICAS
+%----------------------------------------------------------------------------------------
+
+%-----------------------------------------------------------------------------------------------------
+%	BIBLIOGRAFÍA
+%-----------------------------------------------------------------------------------------------------
+
+\usepackage[backend=bibtex, style=numeric, sorting=none]{biblatex}
+\usepackage{csquotes}
+
+\addbibresource{references.bib}
+
+%-----------------------------------------------------------------------------------------------------
+%	PORTADA
+%-----------------------------------------------------------------------------------------------------
+% Elija uno de los siguientes formatos.
+% No olvide incluir los archivos .sty asociados en el directorio del documento.
+\usepackage{title1}
+%\usepackage{title2}
+%\usepackage{title3}
+
+%-----------------------------------------------------------------------------------------------------
+%	TÍTULO, AUTOR Y OTROS DATOS DEL DOCUMENTO
+%-----------------------------------------------------------------------------------------------------
+
+% Título del documento.
+\newcommand{\doctitle}{Lab 2: using the Stainless verification system}
+% Subtítulo.
+\newcommand{\docsubtitle}{}
+% Fecha.
+\newcommand{\docdate}{}
+% Asignatura.
+\newcommand{\subject}{}
+% Autor.
+\newcommand{\docauthor}{Rodrigo Raya Castellano}
+\newcommand{\docaddress}{École Polytechnique Fédérale de Lausanne}
+\newcommand{\docemail}{rodrigo.raya@epfl.ch}
+
+%-----------------------------------------------------------------------------------------------------
+%	RESUMEN
+%-----------------------------------------------------------------------------------------------------
+
+% Resumen del documento. Va en la portada.
+% Puedes también dejarlo vacío, en cuyo caso no aparece en la portada.
+%\newcommand{\docabstract}{}
+\newcommand{\docabstract}{}
+
+\begin{document}
+
+\makeatletter\renewcommand{\ALG@name}{Algoritmo}
+
+\maketitle
+
+%-----------------------------------------------------------------------------------------------------
+%	ÍNDICE
+%-----------------------------------------------------------------------------------------------------
+
+% Profundidad del Índice:
+%\setcounter{tocdepth}{1}
+
+\newpage
+
+\section{Acknowledgements}
+
+The following persons and materials have been useful for completing this lab. 
+
+As a theoretical foundation, we have used chapters 5 and 6 from the textbook of the course \cite{calculus-of-computation}. For practical issues, we have to thank users Nicolas Voirol and OlivierBlanvillain on stackoverflow and users chi and D.W. on cs.stackexchange. The relevant links are \cite{concatenation},\cite{forall},\cite{typeannotations}. Special thanks to user OlivierBlanvillain who recommended us the article in \cite{typearticle} which guided us in the solution for the second exercise. Also the relevant section of the documentation of Stainless \cite{termination} although the part about termination can be expanded. 
+
+\section{Exercise 1}
+
+The first task for this lab was to verify that mutually recursive implementation of the QuickSort algorithm actually sorts the list on which it operates. More precisely, we need Stainless to proof the postcondition of quickSort function:
+
+
+\begin{lstlisting}[label={list:first},caption=Original implementation to verify]
+object QuickSort {
+ 
+  def isSorted(list: List[BigInt]): Boolean = list match {
+    case Cons(x, xs @ Cons(y, _)) => x <= y && isSorted(xs)
+    case _ => true
+  }
+ 
+  def quickSort(list: List[BigInt]): List[BigInt] = (list match {
+    case Nil() => Nil[BigInt]()
+    case Cons(x, xs) => par(x, Nil(), Nil(), xs)
+  }) ensuring { res => isSorted(res) }
+ 
+  def par(x: BigInt, l: List[BigInt], r: List[BigInt], ls: List[BigInt]): List[BigInt] = {
+   ls match {
+     case Nil() => quickSort(l) ++ Cons(x, quickSort(r))
+     case Cons(x2, xs2) => 
+       if (x2 <= x) par(x, Cons(x2, l), r, xs2) 
+       else par(x, l, Cons(x2, r), xs2)
+   }
+  }
+}
+\end{lstlisting}
+
+After speaking with the assistants, reading the Stainless documentation and asking in \cite{concatenation}, we understood that in order to verify a program in Stainless we have to guide the system and provide him with the relevant facts to do the proof. 
+
+According to the textbook \cite{calculus-of-computation}, a useful property to proof that the resulting list is ordered, is to state that the elements on the resulting left list of par are less than the pivot and that the elements on the resulting right list of par are greater than the pivot. This statement is better understood in the equivalent iterative version of our recursive method.
+
+However, it remains to proof that the concatenation of the ordered left list, the pivot element and the ordered right list is itself an ordered list and for that purpose we had to introduce three auxiliary lemmas: 
+
+\begin{lstlisting}[label={list:first},caption=Auxiliar lemmas in our proof]
+def lowerBoundLemma(l1:List[BigInt],l2: List[BigInt],x:BigInt):Boolean = {
+ require(l1.content == l2.content 
+         && forall((y : BigInt) => l1.content.contains(y) ==> y <= x))
+ forall((z : BigInt) => l2.content.contains(z) ==> z <= x) 
+}.holds
+
+def upperBoundLemma(l1:List[BigInt],l2:List[BigInt],x:BigInt):Boolean = {
+ require(l1.content == l2.content 
+         && forall((y : BigInt) => l1.content.contains(y) ==> y >= x))
+ forall((z : BigInt) => l2.content.contains(z) ==> z >= x) 
+}.holds
+  
+def concatLemma(l1:List[BigInt],l2:List[BigInt],pivot:BigInt):Boolean = {
+ require(isSorted(l1) && isSorted(l2) && 
+         forall((z : BigInt) => l1.content.contains(z) ==> z <= pivot) && 
+         forall((z : BigInt) => l2.content.contains(z) ==> z >= pivot) 
+        )
+ isSorted(l1++Cons(pivot,l2)) because{
+   l1 match{
+     case Nil() => isSorted(Cons(pivot,l2))
+     case Cons(h,Nil()) => h <= pivot && isSorted(Cons(pivot,l2))
+     case Cons(h,t) => isSorted(l1) && concatLemma(t,l2,pivot)
+   }     
+ } &&
+ Set(pivot)++l1.content++l2.content == (l1++Cons(pivot,l2)).content &&
+ 1+l1.size+l2.size == (l1++Cons(pivot,l2)).size
+}.holds
+\end{lstlisting}
+
+The first and second lemmas state a fairly simple property, if two lists have the same contents and all the elements of the first list are bounded by a constant, then the elements of the second list are also bounded by that constant. Our intend here is to proof that concatenating the sorted lists with the pivot  does not alter the property that the left list is less than the pivot and the right list is greater than the pivot. 
+
+Once we have proved this facts we can proof the main lemma. Assuming we are given two sorted list l1 and l2 where the first list has elements less than the pivot x and the second list has elements greater than the pivot then, the concatenation of the lists is a sorted list. 
+
+Finally our annotated functions look like this:
+
+\newpage
+\begin{lstlisting}[label={list:first},caption=Annotated quickSort and par functions]
+def quickSort(list: List[BigInt]): List[BigInt] = (list match {
+   case Nil() => Nil[BigInt]()
+   case Cons(x, xs) => par(x, Nil(), Nil(), xs)
+}) ensuring { 
+   res => isSorted(res) && 
+         res.content == list.content && 
+         res.size == list.size 
+}
+ 
+def par(x : BigInt,l : List[BigInt],r : List[BigInt],ls : List[BigInt]): List[BigInt] = {
+  require(forall((z : BigInt) => l.content.contains(z) ==> z <= x)  && 
+          forall((z : BigInt) => r.content.contains(z) ==> z >= x) )
+  ls match {
+    case Nil() => 
+      quickSort(l) ++ Cons(x,quickSort(r))
+    case Cons(x2, xs2) => 
+      if (x2 <= x) par(x, Cons(x2, l), r, xs2) 
+      else par(x, l, Cons(x2, r), xs2)
+  }
+}ensuring{res => isSorted(res) 
+              because{
+                lowerBoundLemma(l,quickSort(l),x) &&
+                upperBoundLemma(r,quickSort(r),x) &&
+                concatIsSortedLemma(quickSort(l),quickSort(r),x) 
+              } &&
+              Set(x)++l.content++r.content++ls.content == res.content &&
+              1+l.size+r.size+ls.size == res.size
+}
+\end{lstlisting}  
+
+We have to note that in this verification we are not proving that the resulting list has the same elements which requires the notion of permutation. This notion must be weakened in order to proof our result. In some way the extra conditions on the contents of the list and size play this role.
+
+We note also that the process we followed in order to proof our proposition is similar to the theoretical procedure given in \cite{calculus-of-computation} based on basic paths and the precondition method. All the time we where going from annotation to annotation (here preconditions and postconditions) trying to figure out what Stainless would need to proof the following annotation. These are the basic paths mentioned in the book. 
+
+\section*{Exercise 2}
+
+The second task for this lab was to verify that the implementation of the QuickSort algorithm terminates for all inputs it accepts. We take as a reference for the ranking functions the ones given in  \cite{typearticle}. 
+
+As the preconditions and postconditions are not part of the implementation we can remove them. However, it is curious that removing all preconditions and postconditions results in Stainless not being able of proving the termination. On the other hand, leaving all the preconditions and postconditions also results in Stainless not being able of proving the termination. We conclude that the system is using the hints we provide to proof termination. These hints have been verified separately so that we can be sure that they hold even in this context. 
+
+\begin{lstlisting}[label={list:second},caption=Using decreases construct to proof termination]
+def quickSort(list: List[BigInt]): List[BigInt] = {
+  decreases((list.size,BigInt(0)))
+  list match {
+    case Nil() => Nil[BigInt]()
+    case Cons(x, xs) => par(x, Nil(), Nil(), xs)
+  }
+} ensuring { res => res.content == list.content && res.size == list.size }
+ 
+def par(x: BigInt, l: List[BigInt], r: List[BigInt], ls: List[BigInt]): List[BigInt] = {
+  decreases((l.size+r.size+ls.size,ls.size+1))
+  ls match {
+    case Nil() => quickSort(l) ++ Cons(x,quickSort(r))
+    case Cons(x2, xs2) => 
+      if (x2 <= x) par(x, Cons(x2, l), r, xs2) 
+      else par(x, l, Cons(x2, r), xs2)
+  }
+}ensuring{
+  res => Set(x)++l.content++r.content++ls.content == res.content &&
+         1+l.size+r.size+ls.size == res.size
+}
+\end{lstlisting}
+
+Finally, while doing this exercise we found a bug that has been reported in \cite{bug} while dealing with BigInt and Int types. We overcame this difficulties and successfully proved the termination of the program.
+
+\newpage
+
+\printbibliography
+
+
+\end{document}

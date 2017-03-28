@@ -1,0 +1,102 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{strong-induction}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Voirol}{V.}%
+     {Nicolas}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{VN1}
+  \strng{fullhash}{VN1}
+  \field{title}{Is there a notion of strong induction in Welder?}
+  \verb{url}
+  \verb http://stackoverflow.com/questions/43020382/is-there-a-notion-of-strong
+  \verb -induction-in-welder
+  \endverb
+  \field{year}{2017}
+  \field{urlday}{27}
+  \field{urlmonth}{03}
+  \field{urlyear}{2017}
+\endentry
+
+\entry{proofs-sets}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Edelmann}{E.}%
+     {Romain}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ER1}
+  \strng{fullhash}{ER1}
+  \field{title}{Proving properties of sets in Inox/Welder}
+  \verb{url}
+  \verb http://stackoverflow.com/questions/43011252/proving-properties-of-sets-
+  \verb in-inox-welder
+  \endverb
+  \field{year}{2017}
+  \field{urlday}{27}
+  \field{urlmonth}{03}
+  \field{urlyear}{2017}
+\endentry
+
+\entry{formally}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {D.W.}{D.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{D1}
+  \strng{fullhash}{D1}
+  \field{title}{Formally proving properties of fold function}
+  \verb{url}
+  \verb http://cs.stackexchange.com/questions/71916/formally-proving-properties
+  \verb -of-fold-function
+  \endverb
+  \field{year}{2017}
+  \field{urlday}{27}
+  \field{urlmonth}{03}
+  \field{urlyear}{2017}
+\endentry
+
+\entry{matching}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {alii.}{a.}%
+     {Emir~B.}{E.~B.}%
+     {et}{e.}%
+     {}{}}%
+  }
+  \strng{namehash}{aEBe1}
+  \strng{fullhash}{aEBe1}
+  \field{pages}{273\bibrangedash 298}
+  \field{title}{Matching objects with patterns}
+  \field{journaltitle}{European Conference on Object-Oriented Programming}
+  \field{year}{2007}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

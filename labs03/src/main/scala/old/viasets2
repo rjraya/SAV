@@ -1,0 +1,191 @@
+import inox._
+import inox.trees.{forall => _, _}
+import inox.trees.dsl._
+
+import welder._
+
+object FoldContent {
+
+  /* We start by defining the relevant functions and datatypes as in the fold left/right case. */
+
+  val foldID = FreshIdentifier("fold")
+  val contentID = FreshIdentifier("content")
+  val withoutID = FreshIdentifier("without")
+
+  val list = FreshIdentifier("List")
+  val cons = FreshIdentifier("Cons")
+  val nil = FreshIdentifier("Nil")
+
+  val head = FreshIdentifier("head")
+  val tail = FreshIdentifier("tail")
+
+  val listADT = mkSort(list)("A")(Seq(cons, nil))
+  val consADT = mkConstructor(cons)("A")(Some(list)) { case Seq(aT) =>
+    Seq(ValDef(head, aT), ValDef(tail, T(list)(aT)))
+  }
+  val nilADT = mkConstructor(nil)("A")(Some(list))(_ => Nil)
+  /*
+   * ```
+   * def foldl[A](f: (A,A) => A, z: A, l: List[A]): A = l match {
+   *   case Cons(x, xs) => foldl(f, f(z, x), xs)
+   *   case Nil() => z
+   * }
+   * ```
+   */ 
+  /* A definition of fold left */
+  val foldFunction = mkFunDef(foldID)("A") { case Seq(aT) => (
+    Seq("f" :: ((aT, aT) =>: aT), "z" :: aT, "l" :: T(list)(aT)), aT, { case Seq(f, z, l) =>
+      if_ (l.isInstOf(T(cons)(aT))) {
+        E(foldID)(aT)(f, f(z, l.asInstOf(T(cons)(aT)).getField(head)), l.asInstOf(T(cons)(aT)).getField(tail))
+        } else_ {
+          z
+        }
+    })
+  }
+
+  /* The list content function, as defined in the previous exercises in Stainless 
+   *
+   * def content: Set[BigInt] = this match {
+   *   case Nil() => Set()
+   *   case Cons(h, t) => Set(h) ++ t.content
+   * }
+   *
+  */
+  val contentFunction = mkFunDef(contentID)("A") { case Seq(aT) => (
+    Seq("l" :: T(list)(aT)), BagType(aT), { case Seq(l) =>
+      if_ (l.isInstOf(T(cons)(aT))) {
+        BagAdd(E(contentID)(aT)(l.asInstOf(T(cons)(aT)).getField(tail)), l.asInstOf(T(cons)(aT)).getField(head))
+      } else_ {
+        FiniteBag(Seq.empty, aT)
+      }
+    })
+  }
+
+   /*  Tells if element x is in list xs
+   *
+   *  def contains(x: A, xs: List[A]): Boolean = xs match {
+   *   case Nil() => false
+   *   case Cons(h, _) if h == x => true
+   *   case Cons(_, t) => contains(x,t)
+   *  }
+   */ 
+
+  /*  Removes the occurrences of x from list A
+   *
+   *  def without(x: A, xs: List[A]) = xs match{
+   *    case Nil() => Nil()
+   *    case y :: ys if(x == y) => ys
+   *    case y :: ys if(x != y) => y :: without(x,ys)  
+   *  }
+   */ 
+  val withoutFunction: FunDef = mkFunDef(withoutID)("A"){ case Seq(aT) => 
+    val args: Seq[ValDef] = Seq("x" :: aT,"xs" :: T(list)(aT))
+    val retType: Type = T(list)(aT)
+    val body: Seq[Variable] => Expr = { case Seq(x,xs) => 
+      if_ (xs.isInstOf(T(cons)(aT))) {
+        val y = xs.asInstOf(T(cons)(aT)).getField(head)
+        val ys = xs.asInstOf(T(cons)(aT)).getField(tail)
+        if_ (x === y) {
+          ys
+        } else_ {
+          T(cons)(aT)( y, E(withoutID)(aT)(x,ys) )
+        }
+      } else_ {
+        T(nil)(aT)()
+      }
+    }
+
+    (args, retType, body)
+  }
+
+
+  val symbols = NoSymbols
+    .withADTs(Seq(listADT, consADT, nilADT))
+    .withFunctions(Seq(foldFunction, contentFunction, withoutFunction))
+
+  val program = InoxProgram(Context.empty, symbols)
+
+  val theory = theoryOf(program)
+  import theory._
+
+  val A = TypeParameter.fresh("A")
+
+  def fold(f: Expr, z: Expr, l: Expr) = E(foldID)(A)(f, z, l)
+  def content(e: Expr) = E(contentID)(A)(e)
+  def without(x: Expr, xs: Expr) = E(withoutID)(A)(x,xs)
+  def singleton(x: Expr) = BagAdd(FiniteBag(Seq.empty,A),x)
+
+  val ListA = T(list)(A)
+  val ConsA = T(cons)(A)
+  val NilA = T(nil)(A)
+
+  /* This method generates a formula stating that the parameter function `f` is associative. */
+  def isAssociative(f: Expr): Expr = forall("x" :: A, "y" :: A, "z" :: A)((x, y, z) => f(x, f(y, z)) === f(f(x, y), z))
+
+  /* This method generates a formula stating that the parameter function `f` is commutative. */
+  def isCommutative(f: Expr): Expr = forall("x" :: A, "y" :: A)((x, y) => f(x, y) === f(y, x))
+
+  /* This method generates a formula stating that the parameter function `f` is idempotent. */
+  def isIdempotent(f: Expr): Expr = forall("x" :: A, "y" :: A)((x, y) => f(x,y) === f(f(x, y),y))
+
+
+
+  /* TODO: state and prove the following theorem:
+   *
+   *    ∀f: (A,A) => A,z: A, l1: List[A], l2: List[A]. (
+   *      isAssociative(f) &&
+   *      isCommutative(f) &&
+   *      isIdempotent(f) &&
+   *      content(l1) == content(l2)
+   *    ) ==> (fold(f, z, l1) == fold(f, z, l2))
+   */
+  lazy val theorem: Theorem = 
+    forallI("f" :: ((A, A) =>: A), "z" :: A, "l1" :: ListA, "l2" :: ListA) { (f,z,l1,l2) => 
+      implI(and(isAssociative(f),isCommutative(f), isIdempotent(f), content(l1) === content(l2))) { axioms => 
+        val Seq(isAssocf, isCommutativef, isIdempotentf, equalContents) = andE(axioms) : Seq[Theorem]
+        def property1(l: Expr) = 
+          forall("x"::A){ case x =>
+            content(without(x,l)) === BagDifference(content(l),singleton(x))
+          }
+        val lemma1: Theorem = structuralInduction(property1 _,"l" :: ListA) { case (ihs, goal) =>
+          forallI("x" :: A){ x => 
+            ihs.expression match{
+              case C(`cons`, y, ys) => truth
+                /*val eqLemma: Theorem = implI(x === y){ equality => 
+                  content(without(x,ConsA(y,ys)))                                ==|
+                                                                          equality |
+                  content(without(x,ConsA(x,ys)))                                ==|
+                                                                           trivial |
+                  content(ys)                                                    ==|
+                                                                           trivial |
+                  BagDifference(BagUnion(content(ys),singleton(x)),singleton(x)) ==|
+                                                                           trivial |
+                  BagDifference(content(ConsA(x,ys)),singleton(x))               ==|
+                                                                          equality |
+                  BagDifference(content(ConsA(y,ys)),singleton(x)) 
+                }
+
+                val neqLemma: Theorem = implI(x !== y){ nequality => 
+                  content(without(x,ConsA(y,ys))) ==|
+                                                                          nequality |
+                  content(ConsA(y,without(x,ys)))                                 ==|
+                                                                            trivial |
+                  BagUnion(content(without(x,ys)),singleton(y))                   ==|
+                                                                 ihs.hypothesis(ys) |
+                  BagUnion(BagDifference(content(ys),singleton(x)), singleton(y)) ==|
+                                                                            trivial |
+                  BagDifference(BagUnion(content(ys),singleton(y)), singleton(x)) ==|
+                                                                            trivial |
+                  BagDifference(content(ConsA(y,ys)), singleton(x))
+
+                }
+                andI(eqLemma,neqLemma)*/
+              case C(`cons`) => truth 
+            }  
+          }
+        }
+        lemma1  
+      }    
+    }    
+}
+

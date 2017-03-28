@@ -1,0 +1,22 @@
+[0m[[0minfo[0m] [0mRunning Main [0m
+[0m[[0mdebug[0m] [0mWaiting for threads to exit or System.exit to be called.[0m
+[0m[[0mdebug[0m] [0m  Classpath:[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/Documentos/asignaturas/sav/practice/stainless/labs03/target/scala-2.11/classes[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.sbt/0.13/staging/cd425657f28ff0c08b80/welder/target/scala-2.11/classes[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.sbt/0.13/staging/cf2afcc17c48d8168f32/inox/target/scala-2.11/classes[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.sbt/0.13/staging/cf2afcc17c48d8168f32/inox/unmanaged/scalaz3-unix-64-2.11.jar[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.ivy2/cache/com.regblanc/scala-smtlib_2.11/jars/scala-smtlib_2.11-0.2.1.jar[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.ivy2/cache/uuverifiers/princess_2.11/jars/princess_2.11-2016-12-26.jar[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.ivy2/cache/uuverifiers/princess-parser_2.11/jars/princess-parser_2.11-2016-12-26.jar[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.ivy2/cache/uuverifiers/princess-smt-parser_2.11/jars/princess-smt-parser_2.11-2016-12-26.jar[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4.jar[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.ivy2/cache/net.sf.squirrel-sql.thirdparty-non-maven/java-cup/jars/java-cup-0.11a.jar[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.ivy2/cache/org.scalactic/scalactic_2.11/bundles/scalactic_2.11-3.0.1.jar[0m
+[0m[[0mdebug[0m] [0m	/home/usuario/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar[0m
+[0m[[0mdebug[0m] [0mWaiting for thread run-main-0 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread run-main-0 exited.[0m
+[0m[[0mdebug[0m] [0mInterrupting remaining threads (should be all daemons).[0m
+[0m[[0mdebug[0m] [0mSandboxed run complete..[0m
+[0m[[0mdebug[0m] [0mExited with code 0[0m

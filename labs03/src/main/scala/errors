@@ -1,0 +1,3 @@
+Theorem(
+
+∀f: (A, A) => A, z: A, l1: List[A], l2: List[A]. ((((∀x: A, y: A, z: A. (f(x, f(y, z)) == f(f(x, y), z)) && ∀x: A, y: A. (f(x, y) == f(y, x))) && ∀x: A, y: A. (f(x, y) == f(f(x, y), y))) && content[A](l1) == content[A](l2)) ==> (fold[A](f, z, l1) == fold[A](f, z, l2))))

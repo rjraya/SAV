@@ -1,0 +1,273 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plantilla básica de Latex en Español.
+%
+% Autor: Andrés Herrera Poyatos (https://github.com/andreshp)
+%
+% Es una plantilla básica para redactar documentos. Utiliza el paquete fancyhdr para darle un
+% estilo moderno pero serio.
+%
+% La plantilla se encuentra adaptada al español.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------------------------------------------------
+%	INCLUSIÓN DE PAQUETES BÁSICOS
+%-----------------------------------------------------------------------------------------------------
+\documentclass{article}
+%-----------------------------------------------------------------------------------------------------
+%	SELECCIÓN DEL LENGUAJE
+%-----------------------------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}                                    % Permite los acentos.
+%-----------------------------------------------------------------------------------------------------
+%	SELECCIÓN DE LA FUENTE
+%-----------------------------------------------------------------------------------------------------
+% Fuente utilizada.
+\usepackage{courier}                    % Fuente Courier.
+\usepackage{microtype}                  % Mejora la letra final de cara al lector.
+%-----------------------------------------------------------------------------------------------------
+%	ALGORITMOS
+%-----------------------------------------------------------------------------------------------------
+\usepackage{algpseudocode}
+\usepackage{algorithmicx}
+\usepackage{algorithm}
+
+% code listing settings
+\usepackage{listings}
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+}
+%-----------------------------------------------------------------------------------------------------
+%	IMÁGENES
+%-----------------------------------------------------------------------------------------------------
+\usepackage{float}
+\usepackage{placeins}
+%-----------------------------------------------------------------------------------------------------
+%	ESTILO DE PÁGINA
+%-----------------------------------------------------------------------------------------------------
+% Paquetes para el diseño de página:
+\usepackage{fancyhdr}               % Utilizado para hacer títulos propios.
+\usepackage{lastpage}               % Referencia a la última página. Utilizado para el pie de página.
+\usepackage{extramarks}             % Marcas extras. Utilizado en pie de página y cabecera.
+\usepackage[parfill]{parskip}       % Crea una nueva línea entre párrafos.
+\usepackage{geometry}               % Asigna la "geometría" de las páginas.
+% Se elige el estilo fancy y márgenes de 3 centímetros.
+\pagestyle{fancy}
+\geometry{left=3cm,right=3cm,top=3cm,bottom=3cm,headheight=1cm,headsep=0.5cm} % Márgenes y cabecera.
+% Se limpia la cabecera y el pie de página para poder rehacerlos luego.
+\fancyhf{}
+% Espacios en el documento:
+\linespread{1.1}                        % Espacio entre líneas.
+\setlength\parindent{0pt}               % Selecciona la indentación para cada inicio de párrafo.
+% Cabecera del documento. Se ajusta la línea de la cabecera.
+\renewcommand\headrule{
+	\begin{minipage}{1\textwidth}
+	    \hrule width \hsize
+	\end{minipage}
+}
+% Texto de la cabecera:
+\lhead{\subject}                          % Parte izquierda.
+\chead{}                                    % Centro.
+\rhead{\doctitle \ - \docsubtitle}              % Parte derecha.
+% Pie de página del documento. Se ajusta la línea del pie de página.
+\renewcommand\footrule{
+\begin{minipage}{1\textwidth}
+    \hrule width \hsize
+\end{minipage}\par
+}
+\lfoot{Lab 2: Using the Stainless verification system}                    
+\cfoot{}                                                
+\rfoot{\thepage} 
+
+%----------------------------------------------------------------------------------------
+%   MATEMÁTICAS
+%----------------------------------------------------------------------------------------
+\usepackage{amsmath}
+%-----------------------------------------------------------------------------------------------------
+%	BIBLIOGRAFÍA
+%-----------------------------------------------------------------------------------------------------
+
+\usepackage[backend=bibtex, style=numeric, sorting=none]{biblatex}
+\usepackage{csquotes}
+
+\addbibresource{references.bib}
+
+%-----------------------------------------------------------------------------------------------------
+%	PORTADA
+%-----------------------------------------------------------------------------------------------------
+% Elija uno de los siguientes formatos.
+% No olvide incluir los archivos .sty asociados en el directorio del documento.
+\usepackage{title1}
+%\usepackage{title2}
+%\usepackage{title3}
+
+%-----------------------------------------------------------------------------------------------------
+%	TÍTULO, AUTOR Y OTROS DATOS DEL DOCUMENTO
+%-----------------------------------------------------------------------------------------------------
+
+% Título del documento.
+\newcommand{\doctitle}{Lab 3: building proofs using Welder}
+% Subtítulo.
+\newcommand{\docsubtitle}{}
+% Fecha.
+\newcommand{\docdate}{}
+% Asignatura.
+\newcommand{\subject}{}
+% Autor.
+\newcommand{\docauthor}{Rodrigo Raya Castellano}
+\newcommand{\docaddress}{École Polytechnique Fédérale de Lausanne}
+\newcommand{\docemail}{rodrigo.raya@epfl.ch}
+
+%-----------------------------------------------------------------------------------------------------
+%	RESUMEN
+%-----------------------------------------------------------------------------------------------------
+
+% Resumen del documento. Va en la portada.
+% Puedes también dejarlo vacío, en cuyo caso no aparece en la portada.
+%\newcommand{\docabstract}{}
+\newcommand{\docabstract}{}
+
+\begin{document}
+
+\makeatletter\renewcommand{\ALG@name}{Algoritmo}
+
+\maketitle
+
+%-----------------------------------------------------------------------------------------------------
+%	ÍNDICE
+%-----------------------------------------------------------------------------------------------------
+
+% Profundidad del Índice:
+%\setcounter{tocdepth}{1}
+
+\newpage
+
+\section{Acknowledgements}
+
+The following persons and materials have been useful for completing this lab. 
+
+For practical issues, we have to thank users Nicolas Voirol and Romain Edelmann on Stackoverflow and user D.W. on cs.stackexchange. The relevant links are \cite{strong-induction},\cite{proofs-sets} and \cite{formally}. Also, for understanding how extractors work in Scala we used \cite{matching}. 
+
+\section*{Exercise 1}
+
+The solution for this exercise follows the one that was introduced in class. Basically, it consists of proving an auxiliary lemma by induction given the hypothesis on $f$:
+
+\textbf{Lemma:} $$\forall l: List[A]. \forall x: A. (foldl(f, x, l) = f(x, foldl(f, z, l)))$$
+
+Finally, the final theorem looks as:
+
+\textbf{Theorem:} 
+
+$$\forall z: A, f: (A, A) => A, l: List[A]. ((\forall x: A, y: A, z: A. (f(x, f(y, z)) = f(f(x, y), z)) \land \forall x: A. (f(x, z) = x && f(z, x) == x)) ==> (foldl(f, z, l) == foldr(f, z, l))))
+
+
+
+Overall, this exercise was a good introduction to the constructs and syntax of Welder. We learned how to formulate structural induction on list, instantiate lemmas and introduce hypotheses. 
+
+\section*{Exercise 2}
+
+The first approach to solve this exercise comes from the experimentation with small examples in the style of Polya. Indeed, three observations are important here. First, we can take a $fold(f,z,l)$ to be a repeated application of function $f$ to elements of list $l$. Instead of noting $f(f(f(z,x_1)x_2)x_3)$ it is useful to just write $((z,x_1)x_2),x_3)$. Second, we can observe that the commutativity and associativity of operator $f$ allows us to move elements $x_i$ forward and backward in this onion-like structure. Finally, using idempotence we can show that moving backward and forward different elements of the list we can get a list with no repeated elements. Now, it is clear at least from the formal point of view that the fold are equals. 
+
+Proving the theorem with Welder it actually more complicated. In this sense, I think is worth mentioning an idea that came up in class the last day of the assignment. Basically, we want to reorder in some sense two lists represented as trees so that they become equal. The bright idea here is that any finite set has an order. In the case of lists this can be the order induced by the bijection that gives a place to the elements. The problem would actually reduce to proof that some sorting algorithm is correct. 
+
+However, we did not use this approach in our solution and instead we preferred a straight forward induction attempt. The following is a wrong approach to do so, we omit the $nil$ case as trivial:
+
+$$fold(f,z,l_1) = fold(f,z,x::xs) = fold(f,z,x::without(x,xs)) = fold(f,f(z,x),without(x,xs))$$
+
+note that here the only difficult step is step two. The $without$ function removes all the occurrences of the first argument $x$ from the second argument $xs$ and it is defined as follows:
+
+\begin{lstlisting}[label={list:first},caption=Scala code for the without function]
+def without(x: A, xs: List[A]) = xs match{
+ case Nil() => Nil()
+ case y :: ys if(x == y) => without(x,ys)
+ case y :: ys if(x != y) => y :: without(x,ys)  
+}
+\end{lstlisting} 
+
+For the right hand side we have:
+
+$$fold(f,z,l_2) = fold(f,z,x::without(x,l_2)) = fold(f,f(z,x),without(x,l_2))$$
+
+Here the non trivial step is of course the first one. The idea would be to apply induction on $xs$ as clearly $without(x,xs)$ and $without(x,l_2)$ have the same contents and it would be easy to proof that $without(x,xs)$ is a of less size. However, it turns out this is not a suitable proof for structural induction as $without(x,xs)$ needs not to be a tail of the original list on which we induct. Seeing a list as a tree this can be restated as not being a sub-tree of the original tree. \cite{strong-induction}
+
+It is also worth mentioning another approach to solve the exercise in order to avoid having $without(x,xs)$ as in the last term of the left hand side above so that we could perform induction.
+
+Basically, we decided to relax our $without(x,l)$ function that removes all the occurrences of element $x$ in list $l$ and introduce instead a function $withoutOne(x,l)$ that would take just one $x$ from the list. With this approach we used $Bags$ instead of $Sets$ and unconvered a bug in Inox. Namely, writing: $$content(without(x,l)) === BagDifference(content(l),singleton(x))$$ would lead into a run time error: $$\textit{Error: map expects all arguments to have the same array domain, this is not the case for argument 1}$$ that appears to come from the Z3 prover. Also we may note that the error that the system currently provides for using $--$ instead of $BagDifference$ is pretty cryptic being: $$\textit{Error: expecting boolean range}$$ Also, the resulting proof suspiciously omitted the use of the idempotence assumption and we realized it was wrong. 
+
+Nevertheless, after figuring out this last approach was bad we could reuse its ideas to finally fix our first proof. It goes as follows (again omitting the nil case):
+
+We distinguish to cases. For the first case assume that $xs$ contains $x$. Then we would have easily that $contents(xs) = content(l_2)$ and so using the induction hypothesis: $$fold(f,z,x::xs) = fold(f,f(z,x),xs) = fold(f,f(z,x),l_2) = fold(f,z,x::l_2) = fold(f,z,l_2)$$
+
+For the second case, assume that $xs$ does not contain $x$. Then we would have easily that $contents(xs) = contents(l_2) -- \{x\}$. And so: 
+
+$fold(f,z,x::xs) = fold(f,f(z,x),xs) = fold(f,f(z,x),without(x,l_2)) = fold(f,z,x::without(x,l_2)) = fold(f,z,l_2)$
+
+The non-trivial steps here can be solved by the introduction of lemmas 1 and 3. These are indeed the most important lemmas of our proof as they are the only ones that use the hypothesis on $f$ and the contents of the list. For reference purposes we now list all the lemmas introduced in the proof:
+
+\textbf{Lemma 1}: $$\forall xs: List[A]. \forall x: A, z: A.(fold(f, z, Cons(x, xs)) = fold(f, z, Cons(x, without(x, xs))))$$
+
+\textbf{Lemma 2:} $$\forall x: A, y: A, xs: List[A].((x \neq y) \implies (x \in content(xs) = x \in content(Cons(y, xs)))))$$
+
+\textbf{Lemma 3:} $$\forall xs: List[A]. \forall x: A, z: A. (x \in content(xs) \implies (fold(f, z, xs) = fold(f, z, Cons(x, xs))))$$
+
+\textbf{Lemma 4:}
+
+$\forall x: A, n_1: List[A], n_2: List[A].$ $$ ((content(n_1) = content(n_2)) \implies (x \in content(n_1) = x \in content(n_2)))$$
+
+\textbf{Lemma 5:} $$\forall l: List[A]. \forall x: A. (content(without(x, l)) = content(l) \setminus \{x\})$$
+
+\textbf{Lemma 6:} $$\forall x: A, l_1: List[A], l_2: List[A].((content(l_1) = content(l_2)) \implies (content(without(x, l_1)) = content(without(x, l_2))))$$
+
+\textbf{Lemma 7:}
+
+$\forall x: A, xs: List[A], l_2: List[A].$ $$((content(Cons(x,xs)) = content(l_2) \land x \in content(xs)) \implies (content(xs) = content(l_2)))$$
+
+\textbf{Lemma 8:}
+
+$\forall x: A, xs: List[A], l2: List[A].$ $$((content(Cons(x, xs)) == content(l2) \land x \notin content(xs)) \implies (content(xs) == content(l2) \setminus \{x\}))$$
+
+\textbf{Lemma 9:}
+
+$\forall x: A, xs: List[A]. x \in content(Cons(x, xs))$
+
+The final result is then:
+
+$\forall f: (A, A) => A, z: A, l1: List[A], l2: List[A].$
+
+$((((\forall x: A, y: A, z: A. (f(x, f(y, z)) = f(f(x, y), z)) \land$
+
+$\forall x: A, y: A. (f(x, y) = f(y, x))) \land$  
+
+$\forall x: A, y: A. (f(x, y) = f(f(x, y), y))) \land$ 
+
+$content(l1) = content(l2)) \implies (fold(f, z, l1) = fold(f, z, l2)))$
+
+We are sure this proof can be shorten both in size, as there are trivial steps that could be omitted, and in the number of lemmas used. However, we stick to this solution for the time being. For the future, we would like to experiment with proofs that perform natural induction on the size of lists and proofs that use $Bags$ in their solution. 
+
+\newpage
+
+\printbibliography
+
+
+\end{document}
+
