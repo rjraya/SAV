@@ -1,8 +1,0 @@
-
-
-def transform(l: List[Int]) = l match {
-  case Nil => Nil
-  case x :: Nil => x :: Nil
-  case x :: x :: xs => transform(x :: xs)
-  case x :: y :: xs  => transform(y :: transform(x :: xs))
-}

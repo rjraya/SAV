@@ -10,7 +10,7 @@ object QuickSort {
       case Nil() => Nil[BigInt]()
       case Cons(x, xs) => par(x, Nil(), Nil(), xs)
     }
-  }ensuring { res => res.content == list.content && res.size == list.size }
+  } ensuring { res => res.content == list.content && res.size == list.size }
  
   def par(x: BigInt, l: List[BigInt], r: List[BigInt], ls: List[BigInt]): List[BigInt] = {
     decreases((l.size+r.size+ls.size,ls.size+1))
