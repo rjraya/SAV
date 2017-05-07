@@ -1,0 +1,78 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{commentary}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Gordon}{G.}%
+     {M.J.C.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GM1}
+  \strng{fullhash}{GM1}
+  \field{sortinit}{G}
+  \field{pages}{20140234}
+  \field{title}{Tactics for mechanized reasoning: a commentary on Milner
+  (1984)‘The use of machines to assist in rigorous proof’.}
+  \field{journaltitle}{Philosophical Transactions of the Royal Society of
+  London A: Mathematical, Physical and Engineering Sciences}
+  \field{year}{2015}
+\endentry
+
+\entry{mainarticle}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Milner}{M.}%
+     {Robin}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MR1}
+  \strng{fullhash}{MR1}
+  \field{sortinit}{M}
+  \field{pages}{411\bibrangedash 422}
+  \field{title}{The use of machines to assist in rigorous proof [and
+  discussion].}
+  \field{journaltitle}{Philosophical Transactions of the Royal Society of
+  London A: Mathematical, Physical and Engineering Sciences}
+  \field{year}{1984}
+\endentry
+
+\entry{paulson}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Paulson}{P.}%
+     {L.C.}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge University Press}%
+  }
+  \strng{namehash}{PL1}
+  \strng{fullhash}{PL1}
+  \field{sortinit}{P}
+  \field{title}{Logic and computation: interactive proof with Cambridge LCF}
+  \field{year}{1990}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
